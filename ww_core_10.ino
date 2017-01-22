@@ -1,12 +1,17 @@
-// Wood Walker
+// ****************************************************************************
+//      - - - /    ww_core_10.ino
+//    -( W-W )        www.wood-walker.org - Rainer Radow
+//      - - - \          Jan 22, 2017, version 1.v0
+// ****************************************************************************
 // ww_core_06  2015-10-24
 // ww_core_08  2016-08-26  - läuft
 // ww_core_08  2016-10-08  - läuft
 // ww_core_09  2016-11-06  - MQTT rudimentär dazu gebaut
-// ww_core_10  2017-01-18  - MQTT wieder entfernt 
+// ww_core_10  2017-01-18  - MQTT wieder entfernt
 // ww_core_10              - neue wwEyes Benamsung dazu
-// ww_core_10  2017-01-20  - UNIX Time aus ESP und Woody RTC ->OK 
+// ww_core_10  2017-01-20  - UNIX Time aus ESP und Woody RTC ->OK
 // ww_core_10  2017-01-21  - ESP und Wlan-Status ->OK
+
 
 #define ProgRelease "10"
 // 
@@ -35,8 +40,6 @@ the Debug Log page). The reason is that otherwise esp-link prints too much to it
 misses incoming characters.
 */
 
-
-
 // for the Giro
 #include <I2Cdev.h>        // I2C communication commands
 #include <MPU6050_6Axis_MotionApps20.h>  //Giro Library
@@ -51,4 +54,6 @@ wwEyes eye;
 Sd2Card card;
 SdVolume volume;
 SdFile root;
+//=================================================================================
+//=================================================================================
 

@@ -1,6 +1,8 @@
-/*
-Functions to react to the feeler events and navigate through the menu
-*/
+// ****************************************************************************
+//      - - - /    d_menu.ino
+//    -( W-W )        www.wood-walker.org - Rainer Radow
+//      - - - \          Jan 22, 2017, version 1.v0
+// ****************************************************************************
 
 /*
 struct menuvariables {
@@ -12,15 +14,14 @@ byte listact;  // active item in the menu.list collection
 menuvariables menu;
 */
 
-// ------------------------------------------------------------------------------------
+//==================================================================================
 struct menustructure {
     int id;
     byte level;
     char text[9];
     byte action;
 };
-
-// ------------------------------------------------------------------------------------
+//==================================================================================
 #define menuitems 46   // total number of menu items
 
 // menu definition
@@ -43,7 +44,7 @@ static const menustructure menucontent[] {
     menustructure {mOldClock, 1,   "OldClock",     m_action},
     menustructure {mOldClockLow, 1, "OldLowEn",    m_action},
     menustructure {mRTCSetTime, 1, "Set TIME",     m_action},
-    menustructure {mRTCEspSync, 1,   "ESP Sync",   m_action},       
+    menustructure {mRTCEspSync, 1,   "ESP Sync",   m_action},
     //menustructure   {2220, 2,     "RETURN",      m_return},
     menustructure {0, 1,                "RETURN",  m_return},
 
@@ -103,7 +104,6 @@ static const menustructure menucontent[] {
 //menustructure   {mUSBOff, 1,    "USB Off",     m_action},
 //menustructure   {mUSBOn, 1,     "USN On",     m_action},
 
-
 //=======================================================================================
 void feelerListen()
 {
@@ -122,7 +122,6 @@ void feelerListen()
     }
 
 }
-
 //=======================================================================================
 void buttonDown()
 {
@@ -133,7 +132,6 @@ void buttonDown()
     menuShow();
     activeAction = mFeelerListen; // if we go back to the previous menu we can switch off all previouse actions
 }
-
 //=======================================================================================
 void buttonSelect()
 {

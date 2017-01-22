@@ -1,6 +1,8 @@
-// m_mqtt
-
-
+// ****************************************************************************
+//      - - - /    m_mqtt.ino
+//    -( W-W )        www.wood-walker.org - Rainer Radow
+//      - - - \          Jan 22, 2017, version 1.v0
+// ****************************************************************************
 void EspPrepareMqtt()
 {
     // Set-up callbacks for events and initialize with es-link.
@@ -28,12 +30,9 @@ void EspPrepareMqtt()
 //https://www.confirado.de/tools/timestamp-umrechner.html
 
 }
-
-
-
-
+// ================================================================================
 bool connected;
-
+// ================================================================================
 // Callback when MQTT is connected
 void mqttConnected(void* response)
 {
@@ -44,14 +43,14 @@ void mqttConnected(void* response)
     //mqtt.publish("/esp-link/0", "test1");
     connected = true;
 }
-
+// ================================================================================
 // Callback when MQTT is disconnected
 void mqttDisconnected(void* response)
 {
     SerialESP.println("MQTT disconnected");
     connected = false;
 }
-
+// ================================================================================
 // Callback when an MQTT message arrives for one of our subscriptions
 void mqttData(void* response)
 {
@@ -65,12 +64,13 @@ void mqttData(void* response)
     String data = res->popString();
     SerialESP.println(data);
 }
-
+// ================================================================================
 void mqttPublished(void* response)
 {
     SerialESP.println("MQTT published");
 }
-
+// ================================================================================
+// ================================================================================
 
 
 

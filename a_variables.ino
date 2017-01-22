@@ -1,5 +1,8 @@
-// a_variables.h
-//
+// ****************************************************************************
+//      - - - /   a_variables.ino
+//    -( W-W )        www.wood-walker.org - Rainer Radow
+//      - - - \          Jan 22, 2017, version 1.v0
+// ****************************************************************************
 // definition and setting of all global variables of the project
 //==================================================================================
 #define feetStop       0      // ==== motor move status ====
@@ -140,7 +143,6 @@ float euler[3];         // [psi, theta, phi]    Euler angle container
 float ypr[3];           // [yaw, pitch, roll]   yaw/pitch/roll container and gravity vector
 //==================================================================================
 
-
 String chipUID;                   // will be read out of the SAM Chip
 
 //====================================================== MQTT ============================
@@ -154,10 +156,10 @@ ELClientCmd cmd(&esp);
 // Initialize the MQTT client
 ELClientMqtt mqtt(&esp);
 
+//====================================================== WIFI ============================
 uint8_t wifiStatusFlag = STATION_IDLE;
 uint8_t espStatusFlag = 0;
-
-
+// --------------------------------------------- 
 String wifiStatusTxt[6] {
     "IDLE",        /**< Idle status */
     "CONNECTING",      /**< Trying to connect */
@@ -166,6 +168,7 @@ String wifiStatusTxt[6] {
     "CONNECT_FAIL",    /**< Connection error, connection failed */
     "GOT_IP"           /**< Connected, received IP */
 }; /**< Enumeration of possible WiFi status */
-
+//==================================================================================
+//==================================================================================
 
 
